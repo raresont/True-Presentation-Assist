@@ -80,7 +80,7 @@ export class SchedulePage implements OnInit {
     this.audio.setVolume(0.8);
   }
   
-  public requestTranslation() {
+  public sendData() {
     let fileName= this.lastPlayed;
     var url = "http://localhost/interpret";
     if (this.platform.is('ios')) {
