@@ -1,5 +1,5 @@
 {
-  "name": "ionic-conference-app",
+  "name": "presentation-assist",
   "version": "0.0.0",
   "description": "Presentation Assist",
   "author": "Rares Ont",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/ionic-conference-app.git"
+    "url": "https://github.com/raresont/True-Presentation-Assist"
   },
   "private": true,
   "dependencies": {

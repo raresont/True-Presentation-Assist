@@ -4,6 +4,7 @@ import { Media, MediaObject } from '@ionic-native/media/ngx';
 import { Platform } from '@ionic/angular';
 import { File } from '@ionic-native/file/ngx';
 import { FileTransfer, FileTransferObject  } from '@ionic-native/file-transfer/ngx';
+import { UserData } from '../../providers/user-data';
 
 @Component({
   templateUrl: 'tabs-page.html'
@@ -14,7 +15,7 @@ export class TabsPage {
   fileName: string;
   audio: MediaObject;
   audioList: any[] = [];
-  constructor(private mediaCapture: MediaCapture, private media: Media, private file: File, public platform: Platform, private transfer: FileTransfer) { }
+  constructor(private user:UserData, private mediaCapture: MediaCapture, private media: Media, private file: File, public platform: Platform, private transfer: FileTransfer) { }
 
   record() {
     let options: CaptureAudioOptions = { limit: 3 }
@@ -42,6 +43,7 @@ export class TabsPage {
   getAudioList() {
     if(localStorage.getItem("audiolist")) {
       this.audioList = JSON.parse(localStorage.getItem("audiolist"));
+      this.user.audioList = this.audioList;
       console.log(this.audioList);
     }
   }

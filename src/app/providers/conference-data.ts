@@ -116,16 +116,9 @@ export class ConferenceData {
       }
     });
 
-    // if the segment is 'favorites', but session is not a user favorite
-    // then this session does not pass the segment test
-    let matchesSegment = false;
-    if (segment === 'favorites') {
-      if (this.user.hasFavorite(session.name)) {
-        matchesSegment = true;
-      }
-    } else {
-      matchesSegment = true;
-    }
+
+    let matchesSegment = true;
+    
 
     // all tests must be true if it should not be hidden
     session.hide = !(matchesQueryText && matchesTracks && matchesSegment);

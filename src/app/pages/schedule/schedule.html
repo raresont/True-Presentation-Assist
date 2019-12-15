@@ -17,24 +17,25 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
-    <ion-title>Sessions</ion-title>
-
-    <ion-buttons slot="end">
-      <ion-button (click)="presentFilter()">
-        <span *ngIf="ios">Filter</span>
-        <span *ngIf="!ios">
-          <ion-icon slot="icon-only" name="options"></ion-icon>
-        </span>
-      </ion-button>
-    </ion-buttons>
+    <ion-title>History</ion-title>
   </ion-toolbar>
-
+<!---
   <ion-toolbar>
     <ion-searchbar [(ngModel)]="queryText" (ionChange)="updateSchedule()" placeholder="Search"></ion-searchbar>
   </ion-toolbar>
+-->
 </ion-header>
 
 <ion-content>
+    <ion-list vertical="top" horizontal="center">
+        <ion-item *ngFor="let audio of user.audioList; index as i;">
+          <p>{{audio.filename}}</p>
+          <button ion-button clear item-end large (click)="playAudio(audio.filename, i)"><ion-icon name="play"></ion-icon></button>
+        </ion-item>
+        <ion-item-divider sticky>
+        </ion-item-divider>
+      </ion-list>
+<!---
   <ion-list #scheduleList [hidden]="shownSessions === 0">
     <ion-item-group *ngFor="let group of groups" [hidden]="group.hide">
       <ion-item-divider sticky>
@@ -65,28 +66,8 @@
       </ion-item-sliding>
     </ion-item-group>
   </ion-list>
-
-  <ion-list-header [hidden]="shownSessions > 0">
-    No Sessions Found
+-->
+  <ion-list-header [hidden]="user.audioList > 0">
+    No Audio Files Found
   </ion-list-header>
-
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end" #fab>
-    <ion-fab-button>
-      <ion-icon name="share"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button color="vimeo" (click)="openSocial('Vimeo', fab)">
-        <ion-icon name="logo-vimeo"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button color="google" (click)="openSocial('Google+', fab)">
-        <ion-icon name="logo-googleplus"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button color="twitter" (click)="openSocial('Twitter', fab)">
-        <ion-icon name="logo-twitter"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button color="facebook" (click)="openSocial('Facebook', fab)">
-        <ion-icon name="logo-facebook"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
 </ion-content>

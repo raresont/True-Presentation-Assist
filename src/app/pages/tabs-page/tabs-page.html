@@ -18,14 +18,13 @@
   <ion-fab-button style="height:10vh;width:10vh;border:5px solid white; border-radius:50%; border-bottom:10px solid white; border-left:10px solid white;">
     <!--<ion-icon color="danger" name="microphone" onClick="record()" ></ion-icon> -->
 
-    <button ion-button primary (click)="stopRecord()" *ngIf="recording"><ion-icon name="mic-off"></ion-icon>&nbsp;&nbsp;Stop Record</button>
-        <button ion-button primary (click)="startRecord()" *ngIf="!recording"><ion-icon name="mic"></ion-icon>&nbsp;&nbsp;Start Record</button>
+   <!-- <button (click)="stopRecord()" *ngIf="recording"> -->
+      <ion-icon (click)="stopRecord()" *ngIf="recording" name="mic-off"></ion-icon>
+  <!--  </button> -->
+   <!--<button (click)="startRecord()" *ngIf="!recording"> -->
+      <ion-icon (click)="startRecord()" *ngIf="!recording" name="microphone"></ion-icon>
+    <!--</button> -->
+  
   </ion-fab-button> 
 </ion-fab>
 
-<ion-list vertical="top" horizontal="center">
-  <ion-item *ngFor="let audio of audioList; index as i;">
-    <p>{{audio.filename}}</p>
-    <button ion-button clear item-end large (click)="playAudio(audio.filename, i)"><ion-icon name="play"></ion-icon></button>
-  </ion-item>
-</ion-list>
