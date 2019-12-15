@@ -2,7 +2,7 @@
 <widget id="com.ionicframework.conferenceapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Presentation Assist</name>
     <description>Presentation maker</description>
-    <author >Raress Ont</author>
+    <author>Rares Ont</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

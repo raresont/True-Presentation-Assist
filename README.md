@@ -13,21 +13,14 @@ This application is the first version, unstable o the Presentation Assist
 
 _Note: See [How to Prevent Permissions Errors](https://docs.npmjs.com/getting-started/fixing-npm-permissions) if you are running into issues when trying to install packages globally._
 
-## Contributing
-See [CONTRIBUTING.md](https://github.com/ionic-team/ionic-conference-app/blob/master/.github/CONTRIBUTING.md) :tada::+1:
-
-
 ## App Preview
 
-All app preview screenshots were taken by running `ionic serve --lab` on a retina display.
 
 ## Deploying
 
 ### Progressive Web App
 
-1. Un-comment [these lines](https://github.com/ionic-team/ionic2-app-base/blob/master/src/index.html#L21)
-2. Run `npm run ionic:build --prod`
-3. Push the `www` folder to your hosting service
+Not recommanded since a lot of libraries are working only on native;
 
 ### Android
 
