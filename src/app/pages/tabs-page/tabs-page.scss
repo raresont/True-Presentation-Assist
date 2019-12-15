@@ -1,0 +1,30 @@
+.tabbar {
+  justify-content: center;
+}
+
+.tab-button {
+  max-width: 200px;
+}
+
+.topborder:after {
+  padding:0;
+  margin:0;
+  content: "";
+  width: 1px;
+  height: 10px;
+  background-color:white;
+  position: absolute;
+  left:-1px;
+  top: -10px;
+}
+.topborder:before {
+  padding:0;
+  margin:0;
+  content: "";
+  width: 1px;
+  height: 10px;
+  background-color:white;
+  position: absolute;
+  left: -1px;
+  bottom: -5px;
+}
