@@ -30,11 +30,12 @@
     <ion-list vertical="top" horizontal="center">
         <ion-item *ngFor="let audio of user.audioList; index as i;">
           <p>{{audio.filename}}</p>
-          <button ion-button clear item-end large (click)="playAudio(audio.filename, i)"><ion-icon name="play"></ion-icon></button>
+          <button ion-button clear item-end large (click)="playAudio(audio.filename, i)"><span></span><ion-icon name="play" item-end></ion-icon></button>
         </ion-item>
         <ion-item-divider sticky>
         </ion-item-divider>
       </ion-list>
+      <ion-button expand="block" (click)="sendData()" >Process last played Audio</ion-button>
 <!---
   <ion-list #scheduleList [hidden]="shownSessions === 0">
     <ion-item-group *ngFor="let group of groups" [hidden]="group.hide">
@@ -67,7 +68,8 @@
     </ion-item-group>
   </ion-list>
 -->
+<!---
   <ion-list-header [hidden]="user.audioList > 0">
     No Audio Files Found
-  </ion-list-header>
+  </ion-list-header>-->
 </ion-content>
